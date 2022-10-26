@@ -36,9 +36,6 @@ namespace Expense.Service.Test
         [Fact]
         public void Should_return_expense_type_B_if_project_is_external_and_name_is_project_B()
         {
-            // given
-            // when
-            // then
         }
 
         [Fact]
