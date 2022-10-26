@@ -1,6 +1,7 @@
 using Expense.Service;
 using Expense.Service.Expense;
 using Expense.Service.Projects;
+using System;
 using Xunit;
 
 namespace Expense.Service.Test
@@ -66,9 +67,10 @@ namespace Expense.Service.Test
             Project project = new Project(ProjectType.UNEXPECTED_PROJECT_TYPE, "UNEXPECTED_PROJECT_TYPE");
 
             // when
+            Action unexpectedExpenseType = () => ExpenseService.GetExpenseCodeByProjectTypeAndName(project);
 
             // then
-            Assert.Throws<Exceptions.UnexpectedProjectTypeException>(() => ExpenseService.GetExpenseCodeByProjectTypeAndName(project));
+            Assert.Throws<Exceptions.UnexpectedProjectTypeException>(unexpectedExpenseType);
         }
     }
 }
